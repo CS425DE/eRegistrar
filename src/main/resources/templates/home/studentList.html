@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title>eRegistrar-Save List</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+</head>
+<body>
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand">eRegistrar</a>
+
+    <a class="nav-link" href="studentForm">Save</a>
+    <a class="nav-link" href="studentList">List</a>
+
+
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">First</th>
+    <th scope="col">Last</th>
+    <th scope="col">Enrollment Date</th>
+    <th scope="col">is International</th>
+    <th scope="col">Handle</th>
+  </tr>
+  </thead>
+  <tbody>
+
+<tr th:each="student: ${studentList}">
+  <td th:text="${student.studentNumber}" />
+  <td th:text="${student.firstName}" />
+  <td th:text="${student.lastName}" />
+  <td th:text="${student.enrollmentDate}" />
+  <td th:text="${student.isInternational}" />
+  <td><a th:href="@{/eRegistrar/edit/{studentId}(studentId=${student.studentId})}">Edit</a></td>
+<!--  <td><a th:href="@{/delete/{id}(id=${student.studentId})}">Delete</a></td>-->
+</tr>
+
+  </tbody>
+</table>
+
+
+
+</body>
+</html>
