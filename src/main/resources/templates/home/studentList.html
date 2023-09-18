@@ -29,7 +29,7 @@
     <th scope="col">#</th>
     <th scope="col">First</th>
     <th scope="col">Last</th>
-    <th scope="col">Enrollment Date</th>
+<!--    <th scope="col">Enrollment Date</th>-->
     <th scope="col">is International</th>
     <th scope="col">Handle</th>
   </tr>
@@ -40,7 +40,7 @@
   <td th:text="${student.studentNumber}" />
   <td th:text="${student.firstName}" />
   <td th:text="${student.lastName}" />
-  <td th:text="${student.enrollmentDate}" />
+<!--  <td th:text="${student.enrollmentDate}" />-->
   <td th:text="${student.isInternational}" />
   <td><a th:href="@{/eRegistrar/edit/{studentId}(studentId=${student.studentId})}">Edit</a></td>
 <!--  <td><a th:href="@{/delete/{id}(id=${student.studentId})}">Delete</a></td>-->
